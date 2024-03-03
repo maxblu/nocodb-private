@@ -138,7 +138,7 @@ abstract class BaseGqlXcTsSchema extends BaseRender {
       }
     }
 
-    let hasManyRelations = args.hasMany;
+    let hasManyRelations: Array<{ tn: string; rtn: string }> = args.hasMany;
     if (hasManyRelations.length > 1) {
       hasManyRelations = uniqBy(hasManyRelations, (e) => {
         return [e.tn, e.rtn].join();
@@ -147,7 +147,7 @@ abstract class BaseGqlXcTsSchema extends BaseRender {
 
     str += hasManyRelations.length ? `\r\n` : ``;
     // cityList in Country
-    for (const { _tn } of hasManyRelations) {
+    for (const { tn: _tn } of hasManyRelations) {
       const childTable = _tn;
       str += `\t\t${childTable}List(where: String,limit: Int, offset: Int, sort: String): [${childTable}]\r\n`;
       strWhere += `\t\t${childTable}List: Condition${childTable}\r\n`;
@@ -157,7 +157,7 @@ abstract class BaseGqlXcTsSchema extends BaseRender {
     str += this.generateManyToManyTypeProps(args);
     str += this.generateVirtualTypes(args);
 
-    let belongsToRelations = args.belongsTo;
+    let belongsToRelations: Array<{ tn: string; rtn: string }> = args.belongsTo;
     if (belongsToRelations.length > 1) {
       belongsToRelations = uniqBy(belongsToRelations, (e) => {
         return [e.tn, e.rtn].join();
@@ -166,8 +166,8 @@ abstract class BaseGqlXcTsSchema extends BaseRender {
 
     str += belongsToRelations.length ? `\r\n` : ``;
     // Country withi city - this is reverse
-    for (const { _rtn } of belongsToRelations) {
-      const parentTable = _rtn;
+    for (const { rtn } of belongsToRelations) {
+      const parentTable = rtn;
       str += `\t\t${parentTable}Read(id:String): ${parentTable}\r\n`;
       strWhere += `\t\t${parentTable}Read: Condition${parentTable}\r\n`;
     }
