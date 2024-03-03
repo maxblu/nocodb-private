@@ -221,12 +221,12 @@ onMounted(async () => {
               </div>
 
               <div v-if="!appInfo.disableEmailAuth" class="flex items-center gap-2">
-                <a-switch
+                <!-- <a-switch
                   v-model:checked="subscribe"
                   size="small"
                   class="my-1 hover:(ring ring-accent ring-opacity-100) focus:(!ring !ring-accent ring-opacity-100)"
-                />
-                <div class="prose-xs text-gray-500">{{ $t('msg.subscribeToOurWeeklyNewsletter') }}</div>
+                /> -->
+                <!-- <div class="prose-xs text-gray-500">{{ $t('msg.subscribeToOurWeeklyNewsletter') }}</div> -->
               </div>
 
               <div class="text-end prose-sm">

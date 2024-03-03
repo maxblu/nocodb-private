@@ -65,6 +65,8 @@ const column = toRef(props, 'column')
 
 const editEnabled = ref(true)
 
+const { t } = useI18n()
+
 provide(ColumnInj, column)
 
 provide(EditModeInj, readonly(editEnabled))
@@ -233,7 +235,7 @@ provide(IsFormInj, ref(true))
       :is="filterType ? componentMap[filterType] : Text"
       v-model="filterInput"
       :disabled="filter.readOnly"
-      placeholder="Enter a value"
+      :placeholder="$t('placeholder.enterAValue')"
       :column="column"
       class="flex !rounded-lg"
       v-bind="componentProps"

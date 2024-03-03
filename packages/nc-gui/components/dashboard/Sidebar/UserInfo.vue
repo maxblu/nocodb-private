@@ -110,7 +110,7 @@ onMounted(() => {
             </NcMenuItem>
           </template>
           <NcDivider />
-          <a
+          <!-- <a
             v-e="['c:nocodb:discord']"
             href="https://discord.gg/5RgZmkW"
             target="_blank"
@@ -145,7 +145,7 @@ onMounted(() => {
               <GeneralIcon class="text-gray-500 group-hover:text-gray-800 my-0.5" icon="twitter" />
               <span class="menu-btn"> {{ $t('labels.twitter') }} </span>
             </NcMenuItem>
-          </a>
+          </a> -->
           <template v-if="!appInfo.ee">
             <NcDivider />
             <a-popover key="language" class="lang-menu !py-1.5" placement="rightBottom">
@@ -173,7 +173,7 @@ onMounted(() => {
           <template v-if="!isMobileMode">
             <NcDivider />
 
-            <a
+            <!-- <a
               v-e="['c:nocodb:forum-open']"
               href="https://community.nocodb.com"
               target="_blank"
@@ -184,9 +184,9 @@ onMounted(() => {
                 <GeneralIcon icon="help" class="menu-icon mt-0.5" />
                 <span class="menu-btn"> {{ $t('title.forum') }} </span>
               </NcMenuItem>
-            </a>
+            </a> -->
 
-            <a
+            <!-- <a
               v-e="['c:nocodb:docs-open']"
               href="https://docs.nocodb.com"
               target="_blank"
@@ -197,7 +197,7 @@ onMounted(() => {
                 <GeneralIcon icon="doc" class="menu-icon mt-0.5" />
                 <span class="menu-btn"> {{ $t('title.docs') }} </span>
               </NcMenuItem>
-            </a>
+            </a> -->
 
             <NcDivider />
 
@@ -211,9 +211,9 @@ onMounted(() => {
 
     <template v-if="isMobileMode"></template>
     <div v-else-if="appInfo.ee" class="text-gray-500 text-xs pl-3 mt-1">© 2023 NocoDB. Inc</div>
-    <div v-else class="flex flex-row w-full justify-between pt-0.5 truncate">
+    <!-- <div v-else class="flex flex-row w-full justify-between pt-0.5 truncate">
       <GeneralJoinCloud />
-    </div>
+    </div> -->
   </div>
 </template>
 

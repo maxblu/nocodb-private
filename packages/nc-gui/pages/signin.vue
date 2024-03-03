@@ -137,11 +137,11 @@ function navigateForgotPassword() {
                 />
               </a-form-item>
 
-              <div class="hidden md:block text-right">
+              <!-- <div class="hidden md:block text-right">
                 <nuxt-link class="prose-sm" @click="navigateForgotPassword">
                   {{ $t('msg.info.signUp.forgotPassword') }}
                 </nuxt-link>
-              </div>
+              </div> -->
             </template>
 
             <div class="self-center flex flex-col flex-wrap gap-4 items-center mt-4 justify-center">
@@ -185,10 +185,10 @@ function navigateForgotPassword() {
                 </a>
               </div>
 
-              <div v-if="!appInfo.inviteOnlySignup" class="text-end prose-sm">
+              <!-- <div v-if="!appInfo.inviteOnlySignup" class="text-end prose-sm">
                 {{ $t('msg.info.signUp.dontHaveAccount') }}
                 <nuxt-link @click="navigateSignUp">{{ $t('general.signUp') }}</nuxt-link>
-              </div>
+              </div> -->
               <template v-if="!appInfo.disableEmailAuth">
                 <div class="md:hidden">
                   <nuxt-link class="prose-sm" @click="navigateForgotPassword">

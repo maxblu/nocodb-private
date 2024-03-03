@@ -1009,7 +1009,8 @@
     "noTokenCreatedLabel": "Begin by creating API tokens to unlock advanced functionalities.",
     "inviteYourTeam": "Invite your team",
     "inviteYourTeamLabel": "Streamline collaboration and productivity with your team – start by inviting them to join your workspace.",
-    "searchOptions": "Search options"
+    "searchOptions": "Search options",
+    "enterAValue": "Introducir un valor"
   },
   "msg": {
     "clickToCopyFieldId": "Click to copy Field Id",
